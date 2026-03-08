@@ -1,4 +1,4 @@
-# DiscordDownloader &middot; [![Node.js](https://img.shields.io/node/v/hyw-ell/DiscordDownloader)](https://nodejs.org) ![License](https://img.shields.io/github/license/hyw-ell/DiscordDownloader)
+# DiscordDownloader
 
 A Discord bot that downloads and compiles files from Discord servers.
 
