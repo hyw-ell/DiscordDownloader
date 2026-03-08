@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import { Collection, Message, TextBasedChannel, TextChannel } from 'discord.js'
+import { Collection, Message, TextBasedChannel } from 'discord.js'
 
 export async function downloadFilesFromChannel(channel: TextBasedChannel, outputDir: string): Promise<number> {
     fs.mkdirSync(outputDir, { recursive: true })

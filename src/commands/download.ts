@@ -1,4 +1,4 @@
-import { channelMention, ChatInputCommandInteraction, formatEmoji, SlashCommandBuilder, TextChannel } from 'discord.js'
+import { channelMention, ChatInputCommandInteraction, formatEmoji, SlashCommandBuilder } from 'discord.js'
 import path from 'path'
 import os from 'os'
 import { downloadFilesFromChannel } from '../utils/files.js'
