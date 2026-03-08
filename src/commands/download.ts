@@ -26,7 +26,7 @@ export const command = {
         if (subcommand === 'channel') {
             const channel = await interaction.guild?.channels.fetch(interaction.channelId)
 
-            if (!(channel && channel instanceof TextChannel)) {
+            if (!(channel && channel.isTextBased())) {
                 await interaction.editReply('This command can only be used in a text channel.')
                 return
             }
