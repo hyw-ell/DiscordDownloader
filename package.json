@@ -1,13 +1,16 @@
 {
   "name": "discorddownloader",
   "version": "1.0.0",
-  "description": "Discord bot that compiles and downloads files from Discord servers.",
+  "description": "A Discord bot that downloads and compiles files from Discord servers.",
   "type": "module",
   "main": "./prod/index.js",
   "scripts": {
     "build": "tsc",
     "start": "tsc && node ./prod/index.js",
     "postinstall": "npm run build"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "keywords": [],
   "author": "Hywell",

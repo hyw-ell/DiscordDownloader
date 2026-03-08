@@ -7,12 +7,8 @@ import { registerCommands, sendToChannel, sendToErrorChannel } from './utils/dis
 
 export const client = new BotClient()
 
-export async function runStartup() {
-	registerCommands()
-}
-runStartup()
-
 client.on('clientReady', async () => {
+	await registerCommands()
 	console.log(`${client.user?.displayName} is now online`)
 	sendToChannel(CHANNEL_IDS.COMMAND_LOG, `**:white_check_mark:  ${client.user?.displayName} is now online**`)
 })

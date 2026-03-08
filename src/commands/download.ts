@@ -43,7 +43,7 @@ export const command = {
             }
 
         } else if (subcommand === 'server') {
-            // TODO: implement server-wide download
+            // TODO: implement server-wide download, including threads and the like
             await interaction.editReply('Server download is not yet implemented.')
         }
 	}
