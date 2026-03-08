@@ -14,12 +14,14 @@ You will need to create a Discord bot and obtain a token from the [Discord Devel
 
 1. Download this repository as a ZIP file by clicking the green **Code** button on GitHub, then **Download ZIP**
 2. Extract the ZIP to a folder of your choice
-3. Open the extracted folder and double-click **install.bat**
+3. Open the extracted folder and double-click **setup.bat**
 4. Enter your bot token when prompted
+5. Optionally, enter Discord channel IDs for command and error logging
+    1. You need to enable Developer Mode to get a channel's ID. To enable Developer Mode in Discord, open **User Settings**, navigate to **Advanced** under **App Settings**, and toggle on **Developer Mode**
 
 ## Running the Bot
 
-Once installation is complete, double-click **start.bat** to launch the bot. The bot is ready when you see "FileDownloader is now online" in the console window. Do not close the console window while the bot is in use.
+Once installation is complete, double-click **start.bat** to launch the bot. The bot is ready when you see "<bot-name> is now online" in the console window. Do not close the console window while the bot is in use.
 
 ## Usage
 

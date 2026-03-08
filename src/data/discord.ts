@@ -1,7 +1,0 @@
-export const BOT_ID = '759240436379418634'
-export const BOT_TOKEN = process.env.BOT_TOKEN!
-
-export const CHANNEL_IDS = {
-    ERROR: '936833258149281862',
-    COMMAND_LOG: '577636091834662915',
-}

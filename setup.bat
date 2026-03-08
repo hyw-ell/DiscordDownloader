@@ -58,6 +58,25 @@ if "%tokenFound%"=="true" (
     )
 )
 
+:: Optional Discord logging setup
+echo.
+echo Optional Setup
+echo ==============
+echo You can configure Discord channels for command logs and error reporting.
+echo Press Enter to skip either of these.
+echo.
+
+set /p logChannel="Enter command log channel ID (optional): "
+set /p errorChannel="Enter error channel ID (optional): "
+
+if not "%logChannel%"=="" (
+    powershell -Command "(Get-Content src\config.ts) -replace 'COMMAND_LOG:.+', 'COMMAND_LOG: ''%logChannel%'',' | Set-Content src\config.ts"
+)
+
+if not "%errorChannel%"=="" (
+    powershell -Command "(Get-Content src\config.ts) -replace 'ERROR:.+', 'ERROR: ''%errorChannel%'',' | Set-Content src\config.ts"
+)
+
 echo.
 echo Setup complete! Run start.bat to launch your bot.
 echo.

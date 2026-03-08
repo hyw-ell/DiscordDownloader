@@ -2,7 +2,7 @@ import 'dotenv/config'
 
 import { MessageFlags } from 'discord.js'
 import { BotClient } from './classes/BotClient.js'
-import { CHANNEL_IDS, BOT_TOKEN } from './data/discord.js'
+import { CHANNEL_IDS, BOT_TOKEN } from './config.js'
 import { registerCommands, sendToChannel, sendToErrorChannel } from './utils/discord.js'
 
 export const client = new BotClient()
@@ -34,4 +34,4 @@ client.on('interactionCreate', interaction => {
 
 client.login(BOT_TOKEN)
 
-process.on('uncaughtException', sendToErrorChannel)
+process.on('uncaughtException', error => sendToErrorChannel(error))

@@ -1,7 +1,7 @@
 import { MessageCreateOptions, MessagePayload, REST, Routes, TextChannel } from 'discord.js'
 import { readdirSync } from 'fs'
 import { client } from '../index.js'
-import { BOT_ID, BOT_TOKEN, CHANNEL_IDS } from '../data/discord.js'
+import { BOT_TOKEN, CHANNEL_IDS } from '../config.js'
 import { Command } from '../classes/BotClient.js'
 import { inspect } from 'util'
 
@@ -17,11 +17,11 @@ export async function registerCommands() {
     }
 
     const rest = new REST({ version: '9' }).setToken(BOT_TOKEN)
-    rest.put(Routes.applicationCommands(BOT_ID), { body: commands })
+    rest.put(Routes.applicationCommands(client.user!.id), { body: commands })
 }
 
 export async function sendToChannel(channelID: string, message: string | MessagePayload | MessageCreateOptions) {
-    const channel = await client.channels.fetch(channelID) as TextChannel | null
+    const channel = await client.channels.fetch(channelID).catch(() => null) as TextChannel | null
     if (channel) channel.send(message)
 }
 
