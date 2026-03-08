@@ -3,7 +3,7 @@ import { ChatInputCommandInteraction, formatEmoji, SlashCommandBuilder } from 'd
 export const command = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription("Shows response time")
+		.setDescription("Shows the bot's response time")
 	,
 	async execute(interaction: ChatInputCommandInteraction) {
 		const time = Date.now()

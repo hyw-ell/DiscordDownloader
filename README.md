@@ -21,7 +21,7 @@ You will need to create a Discord bot and obtain a token from the [Discord Devel
 
 ## Running the Bot
 
-Once installation is complete, double-click **start.bat** to launch the bot. The bot is ready when you see "<bot-name> is now online" in the console window. Do not close the console window while the bot is in use.
+Once installation is complete, double-click **start.bat** to launch the bot. The bot is ready when you see "\<bot-name\> is now online" in the console window. Do not close the console window while the bot is in use.
 
 ## Usage
 
