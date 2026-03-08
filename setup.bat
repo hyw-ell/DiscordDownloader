@@ -8,8 +8,7 @@ echo.
 where node >nul 2>&1
 if %errorlevel% neq 0 (
     echo Node.js is not installed.
-    echo Opening the Node.js download page...
-    start https://nodejs.org/en/download
+    echo Please download and install the latest LTS version from https://nodejs.org, then run this script again.
     echo.
     pause
     exit /b 1

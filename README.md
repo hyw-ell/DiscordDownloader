@@ -5,7 +5,7 @@ A Discord bot that downloads and compiles files from Discord servers.
 ## Prerequisites
 
 ### Node.js
-This bot requires Node.js to run. If you don't have it installed, you can get it from https://nodejs.org/en/download.
+This bot requires Node.js to run. If you don't have it installed, you can get the latest LTS version from https://nodejs.org/en/download.
 
 ### Bot Token
 You will need to create a Discord bot and obtain a token from the [Discord Developer Portal](https://discord.com/developers/applications). If you haven't already done this, check out this guide first: https://discordjs.guide/legacy/preparations/app-setup.
