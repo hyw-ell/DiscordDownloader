@@ -1,0 +1,9 @@
+node_modules
+prod
+.env
+*test*
+
+# For use with Fly.io
+.dockerignore
+Dockerfile
+fly.toml
