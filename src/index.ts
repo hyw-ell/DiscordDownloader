@@ -1,10 +1,9 @@
 import 'dotenv/config'
 
 import { MessageFlags } from 'discord.js'
-import { inspect } from 'util'
 import { BotClient } from './classes/BotClient.js'
 import { CHANNEL_IDS, BOT_TOKEN } from './data/discord.js'
-import { registerCommands, sendToChannel } from './utils/discord.js'
+import { registerCommands, sendToChannel, sendToErrorChannel } from './utils/discord.js'
 
 export const client = new BotClient()
 
@@ -24,7 +23,7 @@ client.on('interactionCreate', interaction => {
         const command = client.commands.get(interaction.commandName)
         if (command) {
             sendToChannel(CHANNEL_IDS.COMMAND_LOG, {
-                content: `:scroll:  **${interaction.user.tag}** ran the command \`${interaction.commandName}\` in **${interaction.guild?.name ?? 'Direct Messages'}** (${interaction.guildId ?? interaction.channelId})`,
+                content: `:scroll:  **${interaction.user.username}** ran the command \`${interaction.commandName}\` in **${interaction.guild?.name ?? 'Direct Messages'}** (${interaction.guildId ?? interaction.channelId})`,
                 files: interaction.isChatInputCommand() ? [{ attachment: Buffer.from(JSON.stringify(interaction.options, null, "\t")), name: 'options.json' }] : undefined
             })
             command.execute(interaction)
@@ -39,11 +38,4 @@ client.on('interactionCreate', interaction => {
 
 client.login(BOT_TOKEN)
 
-process.on('uncaughtException', error => {
-	sendToChannel(
-		CHANNEL_IDS.ERROR,
-		{
-			files: [{ attachment: Buffer.from(inspect(error, { depth: null })), name: 'error.ts' }]
-		}
-	)
-})
+process.on('uncaughtException', sendToErrorChannel)

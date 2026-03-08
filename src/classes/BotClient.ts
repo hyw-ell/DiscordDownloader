@@ -12,6 +12,9 @@ export class BotClient extends Client {
     constructor() {
         super({
             intents: [
+                // GatewayIntentBits.Guilds,
+                // GatewayIntentBits.GuildMessages,
+                GatewayIntentBits.MessageContent
             ],
             rest: { timeout: MILLISECONDS.MINUTE }
         })
